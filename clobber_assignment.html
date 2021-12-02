@@ -1,0 +1,112 @@
+<html><head><title>P4</title></head>
+<body alink="#ff0abe" bgcolor="#99ccff" link="#0043ff" text="#000000" vlink="#cc9933">
+
+<h3>
+CS 357&nbsp; Fall 2009</h3>
+
+<h1>
+Program 4: Clobber Bot game</h1>
+Classes: yourLoginName.java (and any additional classes you think are appropriate)
+<hr>
+
+<h3> Description:</h3>
+<p>In this assignment, you will develop an agent (or bot) for a video game.  More than 1 copy of your bot 
+may be placed in the game.  So, for maximum performance you will need to make your bots cooperate with each other
+- at a minimum they shouldn't intentionally shoot each other.  
+
+I plan on running tournaments with teams of size 1, 2, and 4.  I'll run the tournaments as 1 team vs 1 team round 
+robbin, and free-for-all (everybody all at once).  
+
+There are two goals in the game:
+<ul>
+    <li>Destroy as many of the other bots in the game as possible by shooting them or ramming them (but if you
+    ram them you die too, so that may not be the best strategy) - worth +10 points for each kill.</li>
+    <li>Survive to the end of the game - worth +40 points.</li>
+    <li>The score for all copies of your bots will be summed.</li>
+</ul>
+</p>
+
+<p>
+I have provided <a href="clobber.tar.gz"> the game code </a> and examples of bots.  You will want to look at these bots as potential 
+starting points for your bot.  In particular, look at ClobberBot4.java to see how you can read through the world state (WhatIKnow.java 
+class) to see where everything is.  The best performing bot is ClobberBot6.java.
+</p>
+
+
+<h3> Program Requirements:</h3>
+
+<p>
+Your bot should extend the ClobberBot class and override the toString, drawMe, and takeTurn methods.
+</p>
+
+<p>
+The main thing for your bot is performance.  
+In terms of performance, your bot should outperform the bots that have been provided as examples.  
+To do that you'll need to somehow improve on ClobberBot6's performance, which may not be all that easy to do.  You can
+use it as a starting point, or code your own bot up from scratch.  Make sure you report on the performance of 
+your bot vs ClobberBot6.  
+</p>
+
+
+<p>
+When the Clobber game queries your bot for an action (calls the takeTurn method), your takeTurn method must return 
+that action in a timely manner.  
+Bots that take too long will be penalized.  How long is too long?  Certainly a 10th of a second is too long.
+For example, if you want to do 30 frames a second, and you've got, say, 20 bots in the game, then each bot 
+can only take *at most* 1/600 of a second to make a decision every turn.  For this program try to keep your 
+decision making time to less than 1/100 of a second.  If you go above that you're going to start to be penalized.
+</p>
+
+<p>
+Your drawMe method also should be very fast.  It should take at most something like 1/10,000 of a second.  Whatever
+you decided to draw for your agent, it should be centered on the point passed into the method and shouldn't exceed
+the agent girth (see Clobber.java for the maximum girth).
+</p>
+
+<p>
+Your toString method should return the string "yourLoginName" (where "yourLoginName" is your login name on onyx,
+which also happens to be the name of your main class for this assignment).
+</p>
+
+<hr>
+<h3> Objectives:</h3>
+
+<ul>
+    <li> Learn how program an adjent that functions in a multi-agent environment.  </li>
+    <li> Learn how to make teams of agents cooperate. </li>
+    <li> Beat the pants off your fellow students </li>
+</ul>
+
+<hr>
+<h3> Readme:</h3>
+</p><p>
+You should also include a professional quality writeup of 5 to 8 (or so, single spaced)  pages that describes the overall design of your
+bot.  In particular, include a description of the algorithm you use in your takeTurn method. Also include your implementation plan in the readme file.
+You can also include any other information you think I should know when I'm grading your program.  If you have ideas for how
+to improve the program, you could mention those as well.  Make sure you report on your own performance results/tests.
+
+</p><hr>
+<h3>
+Testing:</h3>
+<p>We have provided the Clobber game program that you can use to run your bot.
+Other than that it is up to you to decide what testing you need to do.
+Make sure you talk about your test methodology in your readme file.
+
+</p><hr>
+<h3>
+Submission:</h3>
+Required files (be sure the names match what is here exactly):
+<ul>
+<li> yourLoginName.java </li>
+<li> readme</li>
+</ul>
+All the files that are relevant to this assignment should be together in
+a single directory (the name of your directory does not matter). 
+Remove all class files and any other extraneous files before submitting. 
+<table>
+<tbody><tr><th>Section</th><th>Command</th></tr>
+</tr><tr><td>3</td><td><tt>submit tim cs357 p4</tt></td></tr><tr>
+</tr></tbody></table>
+</body></html>
+
+
